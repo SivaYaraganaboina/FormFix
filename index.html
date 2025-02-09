@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormFix - AI Form Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:,">
+    
+    <!-- Load MediaPipe Pose (LOCAL or CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
+</head>
+<body>
+
+    <header>
+        <h1>FormFix</h1>
+        <p>Upload your video and get AI-powered feedback!</p>
+    </header>
+
+    <main>
+        <section id="upload-section">
+            <label for="activity">Select Activity:</label>
+            <select id="activity">
+                <option value="deadlift">Deadlift</option>
+                <option value="catwalk">Catwalk</option>
+                <option value="moonwalk">Moonwalk</option>
+            </select>
+
+            <input type="file" id="video-upload" accept="video/*">
+            <button id="upload-btn">Upload & Analyze</button>
+        </section>
+
+        <section id="analysis-section">
+            <h2>Analysis Results</h2>
+            <video id="uploaded-video" controls style="display: none;"></video>
+            <canvas id="pose-overlay"></canvas>
+            <p id="feedback">Your feedback will appear here...</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
